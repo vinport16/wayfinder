@@ -1,0 +1,28 @@
+<html>
+<head>
+<style>
+	
+	button {padding:5px; border-radius: 10px; background-color: #f0f0f0;}
+	select {min-width: 80px;}
+
+</style>
+
+<title>Wayfinder</title>
+</head>
+
+<body>
+
+Directions from <select id="position" onchange="updateDestination();"></select> to <select id="destination"></select> 
+<button id="action" onclick="findRoute();"> Go </button><br>
+
+<canvas id="myCanvas" width="1000" height="600" style="border:5px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script src="drawing.js"> </script>
+<script src="nodes.js"> </script>
+<script src="finder.js"></script>
+<script src="action.js"></script>
+
+
+</body>
+</html>
