@@ -20,7 +20,7 @@ drawLevels = function(){
 		if(level == currentLevel){
 			floorsOptions+="<div class=\"floor\" style='background:#99ff99' onclick='changeLevel(\""+level.name+"\");'>"+level.name+"</div>";
 		}else if(path != null && isInRoute(level)){
-			floorsOptions+="<div class=\"floor\" style='background:#ccffcc' onclick='changeLevel(\""+level.name+"\");'>"+level.name+"</div>";
+			floorsOptions+="<div class=\"floor\" style='background:#dfffdf' onclick='changeLevel(\""+level.name+"\");'>"+level.name+"</div>";
 		}else{
 			floorsOptions+="<div class=\"floor\" onclick='changeLevel(\""+level.name+"\");'>"+level.name+"</div>";
 		}
