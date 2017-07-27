@@ -25,10 +25,13 @@ function drawLine(x1, y1, x2, y2, fill){
 	ctx.stroke();
 }
 
+function drawPoint(node){
+    drawCircle(node.x, node.y, 5, "black");
+}
+
 function drawPoints(nodes){
     for(n in nodes){
-        var k = nodes[n];
-        drawCircle(k.x, k.y, 5, "black");
+        drawPoint(nodes[n]);
     }
 }
 function drawName(node){
@@ -40,6 +43,20 @@ function drawName(node){
 function drawNames(nodes){
     for(n in nodes){
         drawName(nodes[n]);
+    }
+}
+
+function drawPlaces(nodes){
+    for(n in nodes){
+        if(
+            nodes[n].name.substring(0,6) != "stairs" &&
+            nodes[n].name.substring(0,8) != "elevator" &&
+            nodes[n].name.substring(0,1) != "h"
+            )
+        {
+            drawPoint(nodes[n]);
+            drawName(nodes[n]);
+        }
     }
 }
 
@@ -58,8 +75,8 @@ function connectTheDots(nodes){
                 nodes[parseInt(n)+1].x, nodes[parseInt(n)+1].y, "green");
         }
     }
-    end = nodes[0];
-    start = nodes[nodes.length-1]
+    start = nodes[0];
+    end = nodes[nodes.length-1]
     
     drawCircle(start.x, start.y, 30, "rgba(255, 0, 255, 0.3)");
     drawCircle(end.x, end.y, 30, "rgba(0, 255, 0, 0.3)");
